@@ -1,0 +1,116 @@
+.garden-intro { background: var(--cream); }
+.garden-premium-cta { background: var(--cream); border-top: 1px solid var(--border); }
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.garden-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.garden-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.garden-card-image {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.garden-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.garden-card:hover .garden-card-image img { transform: scale(1.04); }
+
+.garden-premium-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.garden-card-body {
+  padding: 24px;
+}
+
+.garden-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.garden-cat {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.garden-time {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+.garden-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.garden-card-excerpt {
+  color: var(--text-medium);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.garden-read-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tomato);
+  transition: gap var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.garden-read-link:hover { gap: 10px; }
+
+@media (max-width: 768px) {
+  .garden-grid { grid-template-columns: 1fr; }
+}

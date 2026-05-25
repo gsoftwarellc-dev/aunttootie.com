@@ -1,0 +1,152 @@
+.about-story { background: var(--cream); }
+
+.about-story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-story-images { position: relative; }
+
+.about-story-img-main {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-story-img-secondary {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 240px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 5px solid var(--cream);
+}
+
+.about-story-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.about-paragraphs p {
+  color: var(--text-medium);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Pull Quote */
+.about-quote {
+  background: var(--black);
+  padding: 80px 24px;
+}
+
+.pull-quote {
+  text-align: center;
+}
+
+.pull-quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.pull-quote cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* More Section */
+.about-more { background: var(--light-grey); }
+
+.about-more-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.about-more-text h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.about-value-card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-value-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.about-value-card h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.about-value-card p {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* Garden Full Bleed */
+.about-garden-photo {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+}
+
+.about-garden-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.about-garden-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .about-more-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .about-story-inner { grid-template-columns: 1fr; }
+  .about-story-img-secondary { display: none; }
+  .about-values { grid-template-columns: 1fr; }
+}
