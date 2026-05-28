@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-top container">
         <div className="footer-brand">
-          <img src="/loggo.png" alt="Aunt Tootie" className="footer-logo" />
+          <img src="/logo.png" alt="Aunt Tootie" className="footer-logo" />
           <p className="footer-tagline">
             Where the garden meets the table. Recipes, gardening, and the life they inspire.
           </p>

@@ -7,13 +7,10 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.site-header--transparent {
-  background: transparent;
-}
-
+.site-header--transparent,
 .site-header--solid,
 .site-header--scrolled {
-  background: var(--cream);
+  background: #FEFFF1;
   box-shadow: 0 1px 0 var(--border);
 }
 
@@ -21,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 80px;
   gap: 24px;
 }
 
@@ -30,8 +27,8 @@
 }
 
 .header-logo img {
-  height: 52px;
-  width: auto;
+  height: 70px;
+  width: 70px;
   object-fit: contain;
 }
 
@@ -43,20 +40,20 @@
 
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-dark);
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius);
   transition: color var(--transition), background var(--transition);
   position: relative;
 }
 
 .site-header--transparent .nav-link {
-  color: var(--white);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  color: var(--text-dark);
+  text-shadow: none;
 }
 
 .nav-link:hover {
@@ -65,8 +62,8 @@
 }
 
 .site-header--transparent .nav-link:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.15);
+  color: var(--tomato);
+  background: rgba(200, 57, 26, 0.06);
 }
 
 .nav-link--active {
@@ -74,7 +71,7 @@
 }
 
 .site-header--transparent .nav-link--active {
-  color: var(--gold) !important;
+  color: var(--tomato) !important;
 }
 
 .header-actions {
@@ -84,8 +81,8 @@
 }
 
 .header-subscribe-btn {
-  font-size: 0.75rem;
-  padding: 9px 20px;
+  font-size: 0.9rem;
+  padding: 11px 24px;
 }
 
 .header-hamburger {
@@ -100,7 +97,7 @@
 }
 
 .site-header--transparent .header-hamburger {
-  color: var(--white);
+  color: var(--text-dark);
 }
 
 .header-hamburger:hover {
@@ -111,11 +108,11 @@
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 72px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--cream);
+  background: #FEFFF1;
   z-index: 999;
   padding: 32px 24px;
   transform: translateX(100%);

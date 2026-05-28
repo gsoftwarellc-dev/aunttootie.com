@@ -4,12 +4,14 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 
 const navLinks = [
+  { label: 'Home', to: '/' },
   { label: 'Recipes', to: '/recipes' },
   { label: 'Magazine', to: '/magazine' },
   { label: 'Garden', to: '/garden' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Services', to: '/services' },
   { label: 'About', to: '/about' },
+  { label: 'Meet the Team', to: '/meet-the-team' },
 ];
 
 export default function Header() {
@@ -47,7 +49,7 @@ export default function Header() {
       <div className="header-inner container">
         {/* Logo */}
         <Link to="/" className="header-logo">
-          <img src="/loggo.png" alt="Aunt Tootie" />
+          <img src="/logo.png" alt="Aunt Tootie" />
         </Link>
 
         {/* Desktop Nav */}
