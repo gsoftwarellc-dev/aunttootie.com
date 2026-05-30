@@ -28,6 +28,7 @@ export default function Home() {
           <div className="hero-btns">
             <Link to="/recipes" className="btn btn-primary">Browse Recipes</Link>
             <Link to="/subscribe" className="btn btn-outline-white">Join Premium</Link>
+            <Link to="/magazine" className="btn btn-outline-white">Subscribe to Marigold Eleven</Link>
           </div>
         </div>
         <div className="hero-scroll-hint">
@@ -39,12 +40,8 @@ export default function Home() {
       <section className="home-recipes section-pad">
         <div className="container">
           <div className="section-header">
-            <p className="section-label">From the Kitchen</p>
             <h2 className="section-title">Featured Recipes</h2>
             <div className="divider" />
-            <p className="section-desc">
-              Garden-inspired dishes for every season. Free recipes and exclusive premium content for subscribers.
-            </p>
           </div>
           <div className="recipe-grid">
             {featured.map(recipe => (

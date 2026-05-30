@@ -1,13 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { recipes, categories } from '../data/recipes';
 import RecipeCard from '../components/RecipeCard';
 import './Recipes.css';
 
 export default function Recipes() {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'All');
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('all'); // all | free | premium
+  const [filter, setFilter] = useState('all');
+
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat) setActiveCategory(cat);
+  }, [searchParams]);
 
   const filtered = recipes.filter(r => {
     const matchCat = activeCategory === 'All' || r.category === activeCategory;

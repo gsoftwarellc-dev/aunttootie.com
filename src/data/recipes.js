@@ -223,7 +223,13 @@ export const recipes = [
 ];
 
 export const categories = [
-  "All", "Dinner", "Pizza", "Baking", "Pasta", "Soup", "Salad", "Breakfast"
+  "All",
+  "Garden to Table",
+  "Good Eats without Meats",
+  "Brunch Bangers",
+  "Dip and Drizzle",
+  "The Sip Section",
+  "Premium Pairings",
 ];
 
 export const getRecipeBySlug = (slug) => recipes.find(r => r.slug === slug);

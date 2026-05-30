@@ -14,6 +14,17 @@ import Services from './pages/Services';
 import Subscribe from './pages/Subscribe';
 import MeetTheTeam from './pages/MeetTheTeam';
 
+function ComingSoon({ title }) {
+  return (
+    <main style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '1rem' }}>{title}</h1>
+        <p style={{ color: 'var(--grey)' }}>Coming soon.</p>
+      </div>
+    </main>
+  );
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -30,6 +41,7 @@ function AppInner() {
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/recipes/:slug" element={<RecipeDetail />} />
         <Route path="/magazine" element={<Magazine />} />
+        <Route path="/products" element={<ComingSoon title="Products" />} />
         <Route path="/garden" element={<Garden />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
