@@ -5,12 +5,12 @@ import './Header.css';
 
 const recipeSubcategories = [
   { label: 'All', param: 'All' },
-  { label: 'Garden to Table', param: 'Garden to Table' },
-  { label: 'Good Eats without Meats', param: 'Good Eats without Meats' },
   { label: 'Brunch Bangers', param: 'Brunch Bangers' },
   { label: 'Dip and Drizzle', param: 'Dip and Drizzle' },
-  { label: 'The Sip Section', param: 'The Sip Section' },
+  { label: 'Garden to Table', param: 'Garden to Table' },
+  { label: 'Good Eats without Meats', param: 'Good Eats without Meats' },
   { label: 'Premium Pairings', param: 'Premium Pairings' },
+  { label: 'The Sip Section', param: 'The Sip Section' },
 ];
 
 const navLinks = [

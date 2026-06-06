@@ -22,9 +22,7 @@ export default function Home() {
             Where the Garden<br />
             <em>Meets the Table</em>
           </h1>
-          <p className="hero-sub">
-            25 years of cooking. A lifetime of growing. Come break bread with us.
-          </p>
+
           <div className="hero-btns">
             <Link to="/recipes" className="btn btn-primary">Browse Recipes</Link>
             <Link to="/subscribe" className="btn btn-outline-white">Join Premium</Link>
