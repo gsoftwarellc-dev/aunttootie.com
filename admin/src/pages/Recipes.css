@@ -1,0 +1,334 @@
+/* ─── Toolbar strip ──────────────────────────────────────────────────────── */
+.rp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.rp-search {
+  flex: 0 0 220px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  background: var(--white);
+  transition: border-color 0.15s;
+}
+.rp-search:focus { border-color: var(--gold); }
+
+.rp-cats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cat-pill {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  background: var(--white);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.cat-pill:hover { border-color: var(--gold); color: var(--text); }
+.cat-pill--active { background: var(--text); border-color: var(--text); color: #fff; }
+
+/* ─── Rich text editor overlay ───────────────────────────────────────────── */
+.re-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  overflow-y: auto;
+}
+
+.re-modal {
+  background: var(--white);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 64px);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+}
+
+.re-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.re-header h2 { font-size: 17px; font-weight: 700; }
+.re-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.re-close:hover { background: var(--bg); }
+
+.re-body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* ─── Meta sidebar ───────────────────────────────────────────────────────── */
+.re-meta {
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rf label, .rf-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.rf input,
+.rf select,
+.rf textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.rf input:focus, .rf select:focus, .rf textarea:focus { border-color: var(--gold); }
+.rf textarea { resize: vertical; }
+
+.rf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.rf-image {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rf-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.rf-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.rf-toggle-btn {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  background: var(--white);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.rf-toggle-btn--active {
+  background: var(--green);
+  color: #fff;
+}
+
+.rf-toggle-btn--premium.rf-toggle-btn--active {
+  background: var(--gold);
+  color: #fff;
+}
+
+.rf-checks { display: flex; gap: 16px; }
+.rf-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.rf-check input { cursor: pointer; accent-color: var(--gold); }
+
+/* ─── Editor column ──────────────────────────────────────────────────────── */
+.re-editor-col {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+.rf-label { margin-bottom: 8px; }
+
+.tiptap-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ─── Tiptap toolbar ─────────────────────────────────────────────────────── */
+.rtb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  background: #fafaf7;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.rtb-group { display: flex; align-items: center; gap: 2px; }
+
+.rtb-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+
+.rtb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.12s, color 0.12s;
+}
+.rtb-btn:hover { background: var(--border); color: var(--text); }
+.rtb-btn--active { background: #e8e8e0; color: var(--text); }
+
+.rtb-select {
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+}
+
+/* ─── Tiptap content area ────────────────────────────────────────────────── */
+.tiptap-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  min-height: 300px;
+}
+
+/* Make the Tiptap editor div take full space */
+.tiptap-body .tiptap,
+.tiptap-body [contenteditable] {
+  min-height: 280px;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.tiptap-body .tiptap p { margin-bottom: 12px; }
+.tiptap-body .tiptap h1 { font-size: 22px; font-weight: 700; margin: 20px 0 10px; }
+.tiptap-body .tiptap h2 { font-size: 18px; font-weight: 700; margin: 18px 0 8px; }
+.tiptap-body .tiptap h3 { font-size: 15px; font-weight: 700; margin: 14px 0 6px; }
+.tiptap-body .tiptap ul { margin: 0 0 12px 20px; }
+.tiptap-body .tiptap ol { margin: 0 0 12px 20px; }
+.tiptap-body .tiptap li { margin-bottom: 4px; }
+.tiptap-body .tiptap blockquote {
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+  margin: 12px 0;
+  color: var(--text-light);
+  font-style: italic;
+}
+.tiptap-body .tiptap hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.tiptap-body .tiptap img { max-width: 100%; height: auto; border-radius: 6px; margin: 12px 0; }
+.tiptap-body .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--text-light);
+  pointer-events: none;
+  height: 0;
+}
+
+.tiptap-body .tiptap strong { font-weight: 700; }
+.tiptap-body .tiptap em { font-style: italic; }
+.tiptap-body .tiptap u { text-decoration: underline; }
+.tiptap-body .tiptap mark { background: #fff3b0; border-radius: 2px; padding: 0 2px; }
+.tiptap-body .tiptap a { color: var(--gold); text-decoration: underline; cursor: pointer; }
+.tiptap-body .tiptap code { background: #f0f0ea; border-radius: 3px; padding: 1px 5px; font-family: monospace; font-size: 0.88em; }
+.tiptap-body .tiptap table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+.tiptap-body .tiptap td, .tiptap-body .tiptap th { border: 1px solid var(--border); padding: 8px 12px; min-width: 80px; vertical-align: top; font-size: 0.9rem; }
+.tiptap-body .tiptap th { background: #f5f5f0; font-weight: 700; text-align: left; }
+.tiptap-body .tiptap .selectedCell { background: rgba(201,168,76,0.12); }
+.rtb-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ─── Modal footer ───────────────────────────────────────────────────────── */
+.re-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--white);
+}
+
+/* ─── Delete confirm ─────────────────────────────────────────────────────── */
+.confirm-box {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.confirm-box h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
