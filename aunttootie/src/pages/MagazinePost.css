@@ -1,0 +1,127 @@
+.mp-page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-height: 80vh;
+}
+
+.mp-hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 0;
+  margin-top: 80px;
+}
+
+.mp-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,26,26,0.55) 0%, rgba(26,26,26,0.1) 60%);
+}
+
+.mp-back {
+  margin: 32px 0 0;
+}
+
+.mp-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mp-back a:hover { color: var(--text-dark); }
+
+.mp-article {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.mp-header {
+  margin-bottom: 40px;
+}
+
+.mp-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+
+.mp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gold);
+  color: var(--white);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.65rem;
+}
+
+.mp-badge--free {
+  background: var(--green, #2ecc71);
+}
+
+.mp-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.mp-teaser {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.mp-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin: 28px 0 0;
+  border-radius: 2px;
+}
+
+.mp-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-dark);
+}
+
+/* Gate */
+.mp-gate {
+  text-align: center;
+  padding: 60px 40px;
+  background: var(--light-grey);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.mp-gate svg { color: var(--gold); }
+.mp-gate h3 { font-size: 1.4rem; margin: 0; }
+.mp-gate p { color: var(--text-light); margin: 0 0 8px; }
+
+@media (max-width: 600px) {
+  .mp-hero { height: 240px; }
+  .mp-article { padding: 24px 0 60px; }
+}
